@@ -1,0 +1,7 @@
+Calamity Schematic Exporter allows you to take screen selection captures and export them as schematics for consumption by Calamity's schematic manager.
+
+Schematics can contain tiles and walls from any mod but do not save tile entities. Attempting to place a schematic which contains tiles from an unloaded mod will place TML Mystery Tiles. As TML does not have Mystery Walls, walls from unloaded mods will cease to exist.
+
+This mod also adds a special tile and wall for use in schematics. The Schematic Preserver Tile/Wall will never be placed by the schematic manager and are used to mark positions where you would like the original tiles/walls to remain untouched.
+
+Sprites for the Schematic Preserver Tile/Wall are taken from Example Mod.

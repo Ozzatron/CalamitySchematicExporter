@@ -1,0 +1,8 @@
+displayName = Calamity Schematic Exporter
+author = Dominic K & Ozzatron
+version = 1.0.0
+hideCode = false
+hideResources = false
+includeSource = true
+includePDB = true
+modReferences = CalamityMod

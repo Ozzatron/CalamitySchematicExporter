@@ -17,6 +17,7 @@ namespace CalamitySchematicExporter.Items.Placeables
 			item.autoReuse = true;
 			item.useAnimation = 15;
 			item.useTime = 4;
+			item.tileBoost = 50;
 			item.useStyle = ItemUseStyleID.SwingThrow;
 			item.createWall = ModContent.WallType<Walls.PreserverWall>();
 		}

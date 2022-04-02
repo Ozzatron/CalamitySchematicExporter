@@ -16,19 +16,19 @@ namespace CalamitySchematicExporter.Projectiles
 
 		public override void SetDefaults()
 		{
-			projectile.width = 2;
-			projectile.height = 2;
-			projectile.friendly = true;
-			projectile.tileCollide = false;
-			projectile.ignoreWater = true;
+			Projectile.width = 2;
+			Projectile.height = 2;
+			Projectile.friendly = true;
+			Projectile.tileCollide = false;
+			Projectile.ignoreWater = true;
 		}
 
 		public override void AI()
 		{
-			Player player = Main.player[projectile.owner];
+			Player player = Main.player[Projectile.owner];
 
 			// If you're dumb enough to use this in multiplayer, nobody else run the code.
-			if (Main.myPlayer != projectile.owner)
+			if (Main.myPlayer != Projectile.owner)
 				return;
 
 			CalamitySchematicPlayer csp = player.GetModPlayer<CalamitySchematicPlayer>();
@@ -37,7 +37,7 @@ namespace CalamitySchematicExporter.Projectiles
 			if (!player.channel || player.noItems || player.CCed)
 			{
 				csp.AttemptExportSchematic();
-				projectile.Kill();
+				Projectile.Kill();
 				return;
 			}
 
@@ -56,7 +56,7 @@ namespace CalamitySchematicExporter.Projectiles
 			int area = selection.Width * selection.Height;
 			double sqrtArea = Math.Sqrt(area);
 			double lightScale = Math.Min(0.3 + 0.0325 * sqrtArea, 1.6);
-			Lighting.AddLight(projectile.Center, 0f, 0.7f * (float)lightScale, (float)lightScale);
+			Lighting.AddLight(Projectile.Center, 0f, 0.7f * (float)lightScale, (float)lightScale);
 			float dustRadius = (float)Math.Min(5D * sqrtArea, 150D);
 			SpawnEnergyVacuumDust(area, dustRadius);
 
@@ -64,7 +64,7 @@ namespace CalamitySchematicExporter.Projectiles
 			Vector2 offset = HeldItemOffset;
 			if (player.direction == -1)
 				offset.X = -offset.X - 7f;
-			projectile.Center = player.Center + offset;
+			Projectile.Center = player.Center + offset;
 
 			// Keep the player channeling this item as a holdout projectile while it is functioning.
 			player.itemTime = 2;
@@ -81,7 +81,7 @@ namespace CalamitySchematicExporter.Projectiles
 			for (int i = 0; i < dustCount; ++i)
 			{
 				Vector2 posOffset = Main.rand.NextVector2Circular(spawnRadius, spawnRadius);
-				Vector2 dustPos = projectile.Center + posOffset;
+				Vector2 dustPos = Projectile.Center + posOffset;
 				Vector2 dustVel = posOffset * -0.08f;
 				float dustScale = Main.rand.NextFloat(minScale, maxScale);
 				Dust d = Dust.NewDustDirect(dustPos, 0, 0, dustID, 0.08f, 0.08f, newColor: dustColor);
@@ -94,8 +94,8 @@ namespace CalamitySchematicExporter.Projectiles
 		// Destroy the owner's corner data when the projectile expires for any reason.
 		public override void Kill(int timeLeft)
 		{
-			Player player = Main.player[projectile.owner];
-			if (Main.myPlayer != projectile.owner)
+			Player player = Main.player[Projectile.owner];
+			if (Main.myPlayer != Projectile.owner)
 				return;
 			CalamitySchematicPlayer csp = player.GetModPlayer<CalamitySchematicPlayer>();
 			csp.CornerOne = csp.CornerTwo = null;

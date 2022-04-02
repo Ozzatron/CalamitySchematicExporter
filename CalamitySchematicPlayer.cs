@@ -34,8 +34,8 @@ namespace CalamitySchematicExporter
 		internal bool AttemptExportSchematic()
 		{
 			CalamitySchematicPlayer csp = null;
-			if (player != null && player.active)
-				csp = player.GetModPlayer<CalamitySchematicPlayer>();
+			if (Player != null && Player.active)
+				csp = Player.GetModPlayer<CalamitySchematicPlayer>();
 			if (csp is null)
 				return false;
 			Rectangle? rectNull = csp.SchematicArea;

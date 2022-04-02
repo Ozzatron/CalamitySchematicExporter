@@ -6,6 +6,7 @@ using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Audio;
 
 namespace CalamitySchematicExporter.Items
 {
@@ -21,20 +22,20 @@ namespace CalamitySchematicExporter.Items
 
 		public override void SetDefaults()
 		{
-			item.width = 38;
-			item.height = 26;
+			Item.width = 38;
+			Item.height = 26;
 
-			item.useTime = item.useAnimation = 40;
-			item.useStyle = ItemUseStyleID.HoldingUp;
-			item.channel = true;
+			Item.useTime = Item.useAnimation = 40;
+			Item.useStyle = ItemUseStyleID.HoldUp;
+			Item.channel = true;
 
-			item.shoot = ModContent.ProjectileType<SchematicReticle>();
-			item.shootSpeed = 0f;
+			Item.shoot = ModContent.ProjectileType<SchematicReticle>();
+			Item.shootSpeed = 0f;
 
-			item.rare = ItemRarityID.Red;
-			item.value = 0;
+			Item.rare = ItemRarityID.Red;
+			Item.value = 0;
 
-			item.UseSound = SoundID.Item64;
+			Item.UseSound = SoundID.Item64;
 		}
 
 		public override bool AltFunctionUse(Player player) => true;
@@ -45,7 +46,7 @@ namespace CalamitySchematicExporter.Items
 			if (player.whoAmI == Main.myPlayer && rightClick)
 			{
 				CalamitySchematicIO.UseCompression = !CalamitySchematicIO.UseCompression;
-				Main.PlaySound(SoundID.Item65);
+				SoundEngine.PlaySound(SoundID.Item65);
 				Main.NewText($"Schematic compression {CompressionStatusString}");
 			}
 			return !rightClick;

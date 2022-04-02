@@ -6,7 +6,7 @@ namespace CalamitySchematicExporter.Tiles
 {
 	public class PreserverTile : ModTile
 	{
-		public override void SetDefaults() {
+		public override void SetStaticDefaults() {
 			Main.tileSolid[Type] = true;
 			Main.tileMergeDirt[Type] = false;
 			Main.tileBlockLight[Type] = false;

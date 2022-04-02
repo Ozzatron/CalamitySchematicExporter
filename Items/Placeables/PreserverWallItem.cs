@@ -11,15 +11,15 @@ namespace CalamitySchematicExporter.Items.Placeables
 		}
 
 		public override void SetDefaults() {
-			item.width = 12;
-			item.height = 12;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 4;
-			item.tileBoost = 50;
-			item.useStyle = ItemUseStyleID.SwingThrow;
-			item.createWall = ModContent.WallType<Walls.PreserverWall>();
+			Item.width = 12;
+			Item.height = 12;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 4;
+			Item.tileBoost = 50;
+			Item.useStyle = ItemUseStyleID.Swing;
+			Item.createWall = ModContent.WallType<Walls.PreserverWall>();
 		}
 	}
 }

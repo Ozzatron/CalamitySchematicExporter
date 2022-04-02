@@ -6,7 +6,7 @@ namespace CalamitySchematicExporter.Walls
 {
 	public class PreserverWall : ModWall
 	{
-		public override void SetDefaults() {
+		public override void SetStaticDefaults() {
 			Main.wallHouse[Type] = false;
 			AddMapEntry(new Color(31, 31, 31));
 		}

@@ -13,12 +13,16 @@ namespace CalamitySchematicExporter.Items
 {
 	public class SchematicExporterItem : ModItem
 	{
-		private const string BaseCompressionTooltip = "Right click to toggle compression";
+		public int CycleIndex;
+
+		private const string BaseCompressionTooltip = "Right click to cycle whether compression and/or large schematics should be outputted";
 		private static string CompressionStatusString => CalamitySchematicIO.UseCompression ? "enabled" : "disabled";
+		private static string LargeSchematicStatusString => Main.LocalPlayer.GetModPlayer<CalamitySchematicPlayer>().GeneratingLargeSchematic ? "enabled" : "disabled";
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Schematic Exporter");
-			Tooltip.SetDefault("Hold and drag to select an area to turn into a schematic\n" + "Schematics are written to your Terraria save directory\n" + BaseCompressionTooltip);
+			Tooltip.SetDefault("Hold and drag to select an area to turn into a schematic\n" + "Schematics are written to your Terraria save directory\n" +
+				$"Large schematics allow for significantly larger areas, at the cost of a bigger output file\n{BaseCompressionTooltip}");
 		}
 
 		public override void SetDefaults()
@@ -46,17 +50,20 @@ namespace CalamitySchematicExporter.Items
 			bool rightClick = player.altFunctionUse == ItemAlternativeFunctionID.ActivatedAndUsed;
 			if (player.whoAmI == Main.myPlayer && rightClick)
 			{
-				CalamitySchematicIO.UseCompression = !CalamitySchematicIO.UseCompression;
+				CycleIndex = (CycleIndex + 1) % 4;
+				CalamitySchematicIO.UseCompression = CycleIndex <= 2;
+				Main.LocalPlayer.GetModPlayer<CalamitySchematicPlayer>().GeneratingLargeSchematic = CycleIndex % 2 == 1;
+
 				SoundEngine.PlaySound(SoundID.Item65);
-				Main.NewText($"Schematic compression {CompressionStatusString}");
+				Main.NewText($"Schematic compression {CompressionStatusString}, large schematics {LargeSchematicStatusString}");
 			}
 			return !rightClick;
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			TooltipLine compressionTooltip = tooltips.First<TooltipLine>((line) => line.Name == "Tooltip2");
-			compressionTooltip.Text = $"{BaseCompressionTooltip} (Currently {CompressionStatusString})";
+			TooltipLine compressionTooltip = tooltips.First<TooltipLine>((line) => line.Name == "Tooltip3");
+			compressionTooltip.Text = $"{BaseCompressionTooltip} (Compression currently {CompressionStatusString}, large schematics currently {LargeSchematicStatusString})";
 		}
 	}
 }

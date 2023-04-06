@@ -6,8 +6,8 @@ namespace CalamitySchematicExporter.Items.Placeables
 	public class PreserverWallItem : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Schematic Preserver Wall");
-			Tooltip.SetDefault("Not consumable\n" + "Used in schematics\n" + "Schematics will not override existing walls to place this wall");
+			// DisplayName.SetDefault("Schematic Preserver Wall");
+			// Tooltip.SetDefault("Not consumable\n" + "Used in schematics\n" + "Schematics will not override existing walls to place this wall");
 		}
 
 		public override void SetDefaults() {

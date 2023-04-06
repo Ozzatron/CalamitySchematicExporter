@@ -11,7 +11,7 @@ namespace CalamitySchematicExporter.Projectiles
 		
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Schematic Reticle");
+			// DisplayName.SetDefault("Schematic Reticle");
 		}
 
 		public override void SetDefaults()

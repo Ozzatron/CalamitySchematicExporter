@@ -20,9 +20,9 @@ namespace CalamitySchematicExporter.Items
 		private static string LargeSchematicStatusString => Main.LocalPlayer.GetModPlayer<CalamitySchematicPlayer>().GeneratingLargeSchematic ? "enabled" : "disabled";
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Schematic Exporter");
-			Tooltip.SetDefault("Hold and drag to select an area to turn into a schematic\n" + "Schematics are written to your Terraria save directory\n" +
-				$"Large schematics allow for significantly larger areas, at the cost of a bigger output file\n{BaseCompressionTooltip}");
+			// DisplayName.SetDefault("Schematic Exporter");
+			/* Tooltip.SetDefault("Hold and drag to select an area to turn into a schematic\n" + "Schematics are written to your Terraria save directory\n" +
+				$"Large schematics allow for significantly larger areas, at the cost of a bigger output file\n{BaseCompressionTooltip}"); */
 		}
 
 		public override void SetDefaults()

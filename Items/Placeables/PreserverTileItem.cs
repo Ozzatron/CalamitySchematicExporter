@@ -6,8 +6,8 @@ namespace CalamitySchematicExporter.Items.Placeables
 	public class PreserverTileItem : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Schematic Preserver Tile");
-			Tooltip.SetDefault("Not consumable\n" + "Used in schematics\n" + "Schematics will not override existing tiles to place this tile");
+			// DisplayName.SetDefault("Schematic Preserver Tile");
+			// Tooltip.SetDefault("Not consumable\n" + "Used in schematics\n" + "Schematics will not override existing tiles to place this tile");
 		}
 
 		public override void SetDefaults() {

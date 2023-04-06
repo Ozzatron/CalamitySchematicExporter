@@ -1,0 +1,38 @@
+Mods: {
+	CalamitySchematicExporter: {
+		Items: {
+			PreserverTileItem: {
+				DisplayName: Schematic Preserver Tile
+				Tooltip:
+					'''
+					Not consumable
+					Used in schematics
+					Schematics will not override existing tiles to place this tile
+					'''
+			}
+
+			PreserverWallItem: {
+				DisplayName: Schematic Preserver Wall
+				Tooltip:
+					'''
+					Not consumable
+					Used in schematics
+					Schematics will not override existing walls to place this wall
+					'''
+			}
+
+			SchematicExporterItem: {
+				DisplayName: Schematic Exporter
+				Tooltip:
+					'''
+					Hold and drag to select an area to turn into a schematic
+					Schematics are written to your Terraria save directory
+					Large schematics allow for significantly larger areas, at the cost of a bigger output file
+					Right click to cycle whether compression and/or large schematics should be outputted
+					'''
+			}
+		}
+
+		Projectiles.SchematicReticle.DisplayName: Schematic Reticle
+	}
+}

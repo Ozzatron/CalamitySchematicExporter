@@ -8,11 +8,6 @@ namespace CalamitySchematicExporter.Projectiles
 	public class SchematicReticle : ModProjectile
 	{
 		private static Vector2 HeldItemOffset => new Vector2(22f, -25f);
-		
-		public override void SetStaticDefaults()
-		{
-			// DisplayName.SetDefault("Schematic Reticle");
-		}
 
 		public override void SetDefaults()
 		{

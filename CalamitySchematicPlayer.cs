@@ -12,8 +12,6 @@ namespace CalamitySchematicExporter
 		internal Point? CornerOne = null;
 		internal Point? CornerTwo = null;
 
-		internal bool GeneratingLargeSchematic = false;
-
 		// Property with a getter that dynamically assembles the corners to produce a meaningful Rectangle.
 		internal Rectangle? SchematicArea
 		{
@@ -48,7 +46,7 @@ namespace CalamitySchematicExporter
 			ExportResult result;
 			try
 			{
-				result = CalamitySchematicIO.ExportSchematic(area, GeneratingLargeSchematic);
+				result = CalamitySchematicIO.ExportSchematic(area);
 				PrintResultMessage(result);
 			} catch
 			{

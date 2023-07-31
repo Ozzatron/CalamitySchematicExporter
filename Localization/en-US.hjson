@@ -27,8 +27,7 @@ Mods: {
 					'''
 					Hold and drag to select an area to turn into a schematic
 					Schematics are written to your Terraria save directory
-					Large schematics allow for significantly larger areas, at the cost of a bigger output file
-					Right click to cycle whether compression and/or large schematics should be outputted
+					Right click to toggle compressed output files
 					'''
 			}
 		}

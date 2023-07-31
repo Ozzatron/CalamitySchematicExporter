@@ -13,11 +13,8 @@ namespace CalamitySchematicExporter.Items
 {
 	public class SchematicExporterItem : ModItem
 	{
-		public int CycleIndex;
-
-		private const string BaseCompressionTooltip = "Right click to cycle whether compression and/or large schematics should be outputted";
+		private const string BaseCompressionTooltip = "Right click to toggle compressed output files";
 		private static string CompressionStatusString => CalamitySchematicIO.UseCompression ? "enabled" : "disabled";
-		private static string LargeSchematicStatusString => Main.LocalPlayer.GetModPlayer<CalamitySchematicPlayer>().GeneratingLargeSchematic ? "enabled" : "disabled";
 
 		public override void SetDefaults()
 		{
@@ -44,20 +41,17 @@ namespace CalamitySchematicExporter.Items
 			bool rightClick = player.altFunctionUse == ItemAlternativeFunctionID.ActivatedAndUsed;
 			if (player.whoAmI == Main.myPlayer && rightClick)
 			{
-				CycleIndex = (CycleIndex + 1) % 4;
-				CalamitySchematicIO.UseCompression = CycleIndex <= 2;
-				Main.LocalPlayer.GetModPlayer<CalamitySchematicPlayer>().GeneratingLargeSchematic = CycleIndex % 2 == 1;
-
+				CalamitySchematicIO.UseCompression = !CalamitySchematicIO.UseCompression;
 				SoundEngine.PlaySound(SoundID.Item65);
-				Main.NewText($"Schematic compression {CompressionStatusString}, large schematics {LargeSchematicStatusString}");
+				Main.NewText($"Schematic compression {CompressionStatusString}.");
 			}
 			return !rightClick;
 		}
 
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
 		{
-			TooltipLine compressionTooltip = tooltips.First<TooltipLine>((line) => line.Name == "Tooltip3");
-			compressionTooltip.Text = $"{BaseCompressionTooltip} (Compression currently {CompressionStatusString}, large schematics currently {LargeSchematicStatusString})";
+			TooltipLine compressionTooltip = tooltips.First<TooltipLine>((line) => line.Name == "Tooltip2");
+			compressionTooltip.Text = $"{BaseCompressionTooltip} (Compression currently {CompressionStatusString})";
 		}
 	}
 }

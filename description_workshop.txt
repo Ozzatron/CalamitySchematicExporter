@@ -2,4 +2,4 @@
 
 Calamity Schematic Exporter allows you to take screen selection captures and export them as schematics for consumption by Calamity's schematic manager.
 
-This mod is useless to you unless you are developing Calamity, as only Calamity can use files made in this schematic format.
+This mod is useless to you unless you are developing Calamity or a Calamity add-on mod. Only Calamity's codebase can use files made in this schematic format.

@@ -1,6 +1,6 @@
 displayName = Calamity Schematic Exporter
 author = Dominic K & Ozzatron
-version = 3.0.0
+version = 3.0.1
 hideCode = false
 hideResources = false
 includeSource = true

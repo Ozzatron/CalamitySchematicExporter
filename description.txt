@@ -4,4 +4,4 @@ Schematics can contain tiles and walls from any mod but do not save tile entitie
 
 This mod also adds a special tile and wall for use in schematics. The Schematic Preserver Tile/Wall will never be placed by the schematic manager and are used to mark positions where you would like the original tiles/walls to remain untouched. Leaving the original tile untouched will also preserve liquid, wires, sloping, etc.
 
-Sprites for the Schematic Preserver Tile/Wall are taken from Example Mod.
+Sprites for the Schematic Preserver Tile/Wall are taken from Example Mod. Mod icon provided by Heart Plus Up! and PokerFace.

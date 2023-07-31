@@ -86,6 +86,9 @@ namespace CalamitySchematicExporter.Projectiles
 			}
 		}
 
+		// The Schematic Reticle cannot damage players or NPCs, or cut grass or break other tiles.
+		public override bool? CanDamage() => false;
+
 		// Destroy the owner's corner data when the projectile expires for any reason.
 		public override void Kill(int timeLeft)
 		{

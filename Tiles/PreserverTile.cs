@@ -22,5 +22,7 @@ namespace CalamitySchematicExporter.Tiles
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b) {
 			b = g = r = 0.16f;
 		}
+
+		public override bool CanDrop(int i, int j) => false;
 	}
 }

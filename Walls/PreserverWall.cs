@@ -16,5 +16,7 @@ namespace CalamitySchematicExporter.Walls
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b) {
 			b = g = r = 0.16f;
 		}
+
+		public override bool Drop(int i, int j, ref int type) => false;
 	}
 }

@@ -13,6 +13,7 @@ namespace CalamitySchematicExporter.Items.Placeables
 			Item.useAnimation = 15;
 			Item.useTime = 4;
 			Item.tileBoost = 50;
+			Item.maxStack = 9999;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.createTile = ModContent.TileType<Tiles.PreserverTile>();
 		}

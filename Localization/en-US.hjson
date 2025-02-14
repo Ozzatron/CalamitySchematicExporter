@@ -6,6 +6,7 @@ Mods: {
 				Tooltip:
 					'''
 					Not consumable
+					Will not drop when broken
 					Used in schematics
 					Schematics will not override existing tiles to place this tile
 					'''
@@ -16,6 +17,7 @@ Mods: {
 				Tooltip:
 					'''
 					Not consumable
+					Will not drop when broken
 					Used in schematics
 					Schematics will not override existing walls to place this wall
 					'''
